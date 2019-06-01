@@ -1,0 +1,43 @@
+class Solution {
+    public String multiply(String num1, String num2) {
+        String s0="0";
+        if(num1.equals(s0)||num2.equals(s0)) return s0;
+        else {
+            int l = num1.length();
+            int r = num2.length();
+            //用来存储两数相乘的结果，并且结果的长度不会大于两数长度之和
+            int[] num = new int[l+r];
+            //第一个数按位循环
+            for(int i=0;i<l;i++) {
+                //得到最低位的数字
+                int n1=num1.charAt(l-1-i)-'0';
+                //保存进位
+                int tmp=0;
+                //第二个数按位循环
+                for(int j=0;j<r;j++) {
+                    int n2=num2.charAt(r-1-j)-'0';
+                    //拿出此时的结果数组里存的数+现在计算的结果数+上一个进位数
+                    tmp=tmp+num[i+j]+n1*n2;
+                    //得到此时结果位的值
+                    num[i+j]=tmp%10;
+                    //此时的进位
+                    tmp/=10;
+                }
+                //第一轮结束后，如果有进位，将其放入到更高位
+                num[i+r]=tmp;
+            }
+
+            int i=l+r-1;
+            //由于所得的结果不知道是否刚好等于数组num的长度，因此，需要确定结果的长度
+            while(i>0&&num[i]==0){
+                i--;
+            }
+            String result="";
+            // 由于数组num 是从低位往高位存储的，所以需要倒转过来
+            while(i>=0) {
+                result += num[i--];
+            }
+           return result;
+        }
+  }
+}

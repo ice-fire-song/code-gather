@@ -1,4 +1,6 @@
 //线段树：将一个区间分解为一些单元区间，每个单元区间对应线段树的每个叶子节点 
+
+//以下程序求区间的最大值（可以通过改动其中的小部分来求最小值，区间和） 
 #include <iostream> 
 #include <cstring> 
 #include <cstdlib> 
@@ -70,7 +72,7 @@ int main()
    scanf("%d",&t);
    while(t--)
    {
-    scanf("%d",&n);
+     scanf("%d",&n);
      for(int i=1;i<=n;i++)
      scanf("%d",&arr[i]);
      build(1,1,n);

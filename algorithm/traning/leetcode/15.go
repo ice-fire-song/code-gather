@@ -59,7 +59,7 @@ func threeSum(nums []int) [][]int {
 
 }
 func main() {
-	arr := []int{-1,0,1,2,-1,-4}
+	arr := []int{0,0,0}
     arr1 := threeSum(arr)
     for i:= 0; i < len(arr1); i++ {
     	fmt.Println(arr1[i][0],"  ",arr1[i][1],"   ",arr1[i][2])

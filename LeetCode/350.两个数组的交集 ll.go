@@ -1,10 +1,6 @@
-package main
 
-import (
-	"fmt"
-)
 
-func intersection(nums1 []int, nums2 []int) []int {
+func intersect(nums1 []int, nums2 []int) []int {
 	len1 := len(nums1)
 	len2 := len(nums2)
 	var i = 0
@@ -26,30 +22,37 @@ func intersection(nums1 []int, nums2 []int) []int {
 		for ; i < len1; i++ {
 			map1[nums1[i]]++
 		}
-		for k,_ := range map2 {
+		for k,v := range map2 {
 			if map1[k] > 0 {
-				res = append(res,k)
+				t := math.Min(float64(v),float64(map1[k]))
+				for {
+					if t <= 0 {
+						break
+					}
+					res = append(res,k)
+					t--
+				}
 			}
+
 		}
 		return res
 	}else {
 		for ; i < len2; i++ {
 			map2[nums2[i]]++
 		}
-		for k,_ := range map1 {
+		for k,v := range map1 {
 			if map2[k] > 0 {
-				res = append(res,k)
+				t := math.Min(float64(v),float64(map2[k]))
+				for {
+					if t <= 0 {
+						break
+					}
+					res = append(res,k)
+					t--
+				}
 			}
 		}
 		return res
 	}
 	return res
-}
-func main() {
-	a := []int{1,2,2,1}
-	b := []int{2,2}
-	res := intersection(a,b)
-	for i := 0; i < len(res); i++ {
-		fmt.Print(" ",res[i])
-	}
 }

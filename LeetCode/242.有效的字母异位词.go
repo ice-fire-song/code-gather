@@ -1,6 +1,4 @@
-package main
 
-import "fmt"
 
 func isAnagram(s string, t string) bool {
 
@@ -21,7 +19,4 @@ func isAnagram(s string, t string) bool {
 		}
 		return true
 	}
-}
-func main() {
-   fmt.Print(isAnagram("hello","llohe"))
 }

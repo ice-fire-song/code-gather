@@ -1,9 +1,3 @@
-package main
-
-import (
-	"fmt"
-	"sort"
-)
 
 
 func merge(intervals [][]int) [][]int {
@@ -60,10 +54,3 @@ func merge(intervals [][]int) [][]int {
 
 }
 
-func main() {
-	slice := [][]int{{1,4},{5,8}}
-	res := merge(slice)
-    for i := 0; i < len(res); i++ {
-    	fmt.Println(res[i][0],"  ",res[i][1])
-	}
-}

@@ -1,13 +1,3 @@
-// package main
-// import (
-// 	"fmt"
-// 	"math"
-// 	"sort"
-// )
-// func main() {
-// 	arr := []int{0,2,1,-3}
-// 	fmt.Println(threeSumClosest(arr, 1))
-// }
 
 func threeSumClosest(nums []int, target int) int {
 

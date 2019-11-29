@@ -1,10 +1,3 @@
-package main
-
-import (
-	"fmt"
-	"sort"
-)
-
 func threeSum(nums []int) [][]int {
 	sort.Ints(nums)
 	var res [][]int
@@ -56,14 +49,4 @@ func threeSum(nums []int) [][]int {
 	}
 
 	return res
-
-}
-func main() {
-	arr := []int{0,0,0}
-    arr1 := threeSum(arr)
-    for i:= 0; i < len(arr1); i++ {
-    	fmt.Println(arr1[i][0],"  ",arr1[i][1],"   ",arr1[i][2])
-	}
-
-
 }

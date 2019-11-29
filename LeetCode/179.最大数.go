@@ -1,8 +1,4 @@
-package main
-import (
-	"fmt"
-	"sort"
-)
+
 
 func largestNumber(nums []int) string {
 	sort.Slice(nums,func (i int, j int) bool {
@@ -18,9 +14,4 @@ func largestNumber(nums []int) string {
 	}
 
 	return res
-}
-func main() {
-	arr := []int{3,30,34,5,9}
-	res := largestNumber(arr)
-	fmt.Print(res)
 }

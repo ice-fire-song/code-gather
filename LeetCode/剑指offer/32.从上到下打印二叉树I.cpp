@@ -10,7 +10,7 @@
 class Solution {
 public:
     vector<int> levelOrder(TreeNode* root) {
-        // 直接使用BFS即可
+        // 思路：直接使用BFS即可
         vector<int> ret;
         if(!root) return ret;
         queue<TreeNode*> q;
